@@ -49,3 +49,7 @@ img{
     top: 50%;
     right: 20px
 }
+
+.cursor{
+    cursor: pointer;
+}
