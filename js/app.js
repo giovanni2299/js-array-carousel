@@ -60,6 +60,10 @@ next.addEventListener('click', function(){
     //incremento itemElementArray di 1
     itemElementArray++;
 
+    if(itemElementArray === imagesArray.length){
+        itemElementArray = 0
+    }
+
     divItemList[itemElementArray].classList.add('active');
 
 
@@ -73,9 +77,16 @@ prev.addEventListener('click', function(){
 
     //incremento itemElementArray di 1
     itemElementArray--;
+    if(itemElementArray < 0){
+        itemElementArray = 4
+    }
 
     divItemList[itemElementArray].classList.add('active');
 
 
 });
+
+let 
+
+
 
