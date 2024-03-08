@@ -24,7 +24,7 @@ for(let i = 0; i < imagesArray.length; i++){
     const imagePath = imagesArray[i];
 
     const sliderItemHtml =`
-    <div class="items">
+    <div class="items mySlide">
         <img src="${imagePath}" alt="">
     </div>
     `
@@ -42,7 +42,11 @@ let itemElementArray = 0;
 divItemList[itemElementArray].classList.add('active');
   //creo l' ascolto del bottone 
 
+//creo la variabbile per richiamarmi il pulsante next
 const next = document.querySelector('.next');
+
+//creo la variabbile per richiamarmi il pulsante prev
+
 const prev = document.querySelector('.prev');
 
 //collego l' ascolto del bottone 
@@ -74,3 +78,30 @@ prev.addEventListener('click', function(){
 
 
 });
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
