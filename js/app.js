@@ -60,6 +60,7 @@ next.addEventListener('click', function(){
     //incremento itemElementArray di 1
     itemElementArray++;
 
+    //cerco di cr
     if(itemElementArray === imagesArray.length){
         itemElementArray = 0
     }
